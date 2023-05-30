@@ -38,7 +38,7 @@ const WeatherBox = (props) => {
       <PickCity handleCityChange={handleCityChange} />
       {cityData && !pending && !error && <WeatherSummary {...cityData} />}
       {error && <ErrorBox />}
-      {error && cityData && <Loader />}
+      {!error && pending && <Loader />}
     </section>
   );
 };
